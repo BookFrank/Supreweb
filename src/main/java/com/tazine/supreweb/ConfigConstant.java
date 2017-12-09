@@ -9,16 +9,16 @@ package com.tazine.supreweb;
 public interface ConfigConstant {
 
 
-    String CONFIG_FILE = "";
+    String CONFIG_FILE = "supre.properties";
 
-    String JDBC_DRIVER = "";
-    String JDBC_URL = "";
-    String JDBC_USERNAME = "";
-    String JDBC_PASSWORD = "";
+    String JDBC_DRIVER = "jdbc.driver";
+    String JDBC_URL = "jdbc.url";
+    String JDBC_USERNAME = "jdbc.username";
+    String JDBC_PASSWORD = "jdbc.password";
 
-    String APP_BASE_PACKAGE = "";
-    String APP_JSP_PATH = "";
-    String APP_ASSET_PATH = "";
+    String APP_BASE_PACKAGE = "base_package";
+    String APP_JSP_PATH = "jsp_path";
+    String APP_ASSET_PATH = "asset_path";
 
 
 }
