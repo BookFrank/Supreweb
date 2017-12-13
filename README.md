@@ -1,7 +1,7 @@
 # Supreweb
-> 人的一生就是一场修行，希望你能一路Rise!
+> Supreweb 
 >
-> 修行的路上欢迎你使用Rise Blog来记录你的旅程。
+> Supreme
 
 ## 一. 简介 ##
 
@@ -16,4 +16,4 @@ Author: 李扬 Frank
 
 Email: bookfrank@foxmail.com
 
-博客演示[http://supre.tazine.com](http://supre.tazine.com)
+框架demo[http://supre.tazine.com](http://supre.tazine.com)
