@@ -1,6 +1,6 @@
 package com.tazine.supreweb.core.env;
 
-import com.tazine.supreweb.ConfigConstant;
+import com.tazine.supreweb.core.ConfigConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +21,6 @@ public class Environment {
     private static final Logger logger = LoggerFactory.getLogger(Environment.class);
 
     static {
-
         InputStream is = null;
         try {
             is = Thread.currentThread().getContextClassLoader().getResourceAsStream(ConfigConstant.CONFIG_FILE);

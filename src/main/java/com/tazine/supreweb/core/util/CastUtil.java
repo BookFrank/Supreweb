@@ -1,5 +1,7 @@
 package com.tazine.supreweb.core.util;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * 类型转换工具类
  *
@@ -9,16 +11,33 @@ package com.tazine.supreweb.core.util;
 public class CastUtil {
 
 
-    public static String cast2String(Object obj){
+    public static String cast2String(Object obj) {
         return cast2String(obj, "");
     }
 
-    public static String cast2String(Object obj, String defaultValue){
+    public static String cast2String(Object obj, String defaultValue) {
         return null != obj ? String.valueOf(obj) : defaultValue;
     }
 
-    public static Integer cast2Int(){
-        return null;
+    public static int cast2Int(Object obj, int defaultValue) {
+        int intValue = defaultValue;
+        if (null != obj) {
+            String str = cast2String(obj);
+            if (StringUtils.isNotEmpty(str)) {
+                try {
+                    intValue = Integer.parseInt(str);
+                } catch (NumberFormatException e) {
+                    intValue = defaultValue;
+                }
+            }
+        }
+        return intValue;
     }
+
+    public static int cast2Int(Object obj){
+        return cast2Int(obj, 0);
+    }
+
+
 
 }
