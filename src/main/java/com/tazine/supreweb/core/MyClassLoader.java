@@ -13,6 +13,12 @@ public class ClassLoader {
 
     private static final Logger logger = LoggerFactory.getLogger(ClassLoader.class);
 
+    /**
+     * 
+     * @return
+     */
+    public static ClassLoader getClassLoader(){
 
+    }
 
 }
