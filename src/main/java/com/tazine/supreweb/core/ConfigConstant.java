@@ -1,4 +1,4 @@
-package com.tazine.supreweb;
+package com.tazine.supreweb.core;
 
 /**
  * 提供相关配置项常量
