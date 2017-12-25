@@ -1,5 +1,7 @@
 package com.tazine.supreweb.core;
 
+import com.tazine.supreweb.core.env.ConfigConstant;
+import com.tazine.supreweb.core.env.Environment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +43,7 @@ public class MyClassLoader {
         try {
             clz = Class.forName(className, isInit, getClassLoader());
         } catch (ClassNotFoundException e) {
+            logger.error("找不到该Class");
             e.printStackTrace();
         }
         return clz;
@@ -72,7 +75,7 @@ public class MyClassLoader {
     private static Set<Class<?>> getClassesByPath(Set<Class<?>> set, String path, String basePackageName) {
         List<String> names = getClassNames(path, basePackageName);
         for (String className : names){
-//            System.out.println(className);
+            // System.out.println(className);
             set.add(loadClass(className, false));
         }
         return set;
@@ -81,7 +84,7 @@ public class MyClassLoader {
     public static void main(String[] args) {
 
         URL url = getClassLoader().getResource("com.tazine.supreweb");
-        Set<Class<?>> set = getClassesSet("com.tazine.supreweb");
+        Set<Class<?>> set = getClassesSet(Environment.getProperty(ConfigConstant.APP_BASE_PACKAGE));
 //
         for (Class<?> clz : set){
             System.out.println(clz.getSimpleName());
@@ -128,7 +131,7 @@ public class MyClassLoader {
         List<String> fileList = new ArrayList<String>();
         File[] files = new File(basePath).listFiles();
         for (File file : files) {
-            if (null != file && file.isFile()) {
+            if (null != file && file.isFile() && file.getName().endsWith(".class")) {
                 String clzName = basePackageName.concat(".").concat(file.getName());
                 fileList.add(clzName.substring(0, clzName.length() - 6));
             } else if (file.isDirectory()) {
