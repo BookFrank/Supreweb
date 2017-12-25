@@ -1,6 +1,5 @@
 package com.tazine.supreweb.core.env;
 
-import com.tazine.supreweb.core.ConfigConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
