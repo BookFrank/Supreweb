@@ -18,6 +18,14 @@ public class Application {
 
         System.out.println(Environment.getProperty("jdbc.driver"));
 
+        try {
+//            Class.forName("com.tazine.supreweb.core.ClassContainer");
+            Class.forName("com.tazine.supreweb.core.ClassContainer",false,Thread.currentThread().getContextClassLoader());
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
