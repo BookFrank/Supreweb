@@ -1,7 +1,7 @@
 package com.tazine.supreweb.core.env;
 
 /**
- * 提供相关配置项常量
+ * 相关配置项常量
  *
  * @author Frank
  * @since 1.0.0

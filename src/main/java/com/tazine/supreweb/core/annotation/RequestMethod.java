@@ -1,16 +1,20 @@
 package com.tazine.supreweb.core.annotation;
 
 /**
- * Created by lina on 2017/12/25.
- *
+ * HTTP RequestMethod
  * @author frank
  * @since 1.0.0
  */
 public enum RequestMethod {
 
-    GET,
-    POST;
+    GET(1,"GET"),
+    POST(2,"POST");
 
-    RequestMethod() {
+    private int code;
+    private String method;
+
+    RequestMethod(int code, String method) {
+        this.code = code;
+        this.method = method;
     }
 }
