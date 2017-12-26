@@ -18,8 +18,15 @@ public class IndexController {
     public IndexService service;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public void hello(){
+    public String hello(){
         System.out.println("Hello World");
+        return "Hello World!";
+    }
+
+    @RequestMapping(value = "/code", method = RequestMethod.GET)
+    public String code(){
+        System.out.println(this.hashCode());
+        return String.valueOf(this.hashCode());
     }
 
 }
