@@ -1,4 +1,4 @@
-package com.tazine.supreweb.core;
+package com.tazine.supreweb.core.ioc;
 
 import com.tazine.supreweb.core.env.ConfigConstant;
 import com.tazine.supreweb.core.env.Environment;

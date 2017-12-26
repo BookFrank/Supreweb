@@ -1,4 +1,4 @@
-package com.tazine.supreweb.core;
+package com.tazine.supreweb.core.ioc;
 
 import com.tazine.supreweb.core.annotation.Controller;
 import com.tazine.supreweb.core.annotation.Service;
