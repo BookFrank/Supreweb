@@ -1,4 +1,4 @@
-package com.tazine.supreweb.example;
+package com.supreweb.web;
 
 import com.tazine.supreweb.core.annotation.Service;
 
@@ -10,4 +10,9 @@ import com.tazine.supreweb.core.annotation.Service;
  */
 @Service
 public class IndexService {
+
+    public void say(){
+        System.out.println("Iron Man");
+    }
+
 }
