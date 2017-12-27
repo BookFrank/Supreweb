@@ -52,11 +52,8 @@ public class DispatcherServlet extends HttpServlet {
             writer.write(ret);
             writer.close();
         }else {
-            errorBack(resp);
+            resp.sendError(404, "Method not found");
         }
     }
 
-    private void errorBack(HttpServletResponse response){
-        response.setStatus(404);
-    }
 }
