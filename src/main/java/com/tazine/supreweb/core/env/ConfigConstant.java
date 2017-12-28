@@ -3,7 +3,7 @@ package com.tazine.supreweb.core.env;
 /**
  * 相关配置项常量
  *
- * @author Frank
+ * @author frank
  * @since 1.0.0
  */
 public interface ConfigConstant {

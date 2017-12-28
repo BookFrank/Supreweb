@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * 系统环境信息
  *
- * @author Frank
+ * @author frank
  * @since 1.0.0
  */
 public class Environment {

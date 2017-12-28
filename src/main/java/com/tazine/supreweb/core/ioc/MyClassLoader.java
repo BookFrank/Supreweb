@@ -83,6 +83,7 @@ public class MyClassLoader {
 
     public static void main(String[] args) {
 
+        System.out.println(getClassLoader());
         URL url = getClassLoader().getResource("com.tazine.supreweb");
         Set<Class<?>> set = getClassesSet(Environment.getProperty(ConfigConstant.APP_BASE_PACKAGE));
 //
