@@ -3,7 +3,7 @@ package com.supreweb.web;
 import com.tazine.supreweb.core.annotation.Service;
 
 /**
- * Created by lina on 2017/12/25.
+ * IndexService
  *
  * @author frank
  * @since 1.0.0
@@ -11,7 +11,7 @@ import com.tazine.supreweb.core.annotation.Service;
 @Service
 public class IndexService {
 
-    public void say(){
+    public void say() {
         System.out.println("Iron Man");
     }
 

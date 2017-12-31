@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * 类加载器
  *
- * @author Frank
+ * @author frank
  * @since 1.0.0
  */
 public class MyClassLoader {
@@ -74,7 +74,7 @@ public class MyClassLoader {
      */
     private static Set<Class<?>> getClassesByPath(Set<Class<?>> set, String path, String basePackageName) {
         List<String> names = getClassNames(path, basePackageName);
-        for (String className : names){
+        for (String className : names) {
             // System.out.println(className);
             set.add(loadClass(className, false));
         }
@@ -87,7 +87,7 @@ public class MyClassLoader {
         URL url = getClassLoader().getResource("com.tazine.supreweb");
         Set<Class<?>> set = getClassesSet(Environment.getProperty(ConfigConstant.APP_BASE_PACKAGE));
 //
-        for (Class<?> clz : set){
+        for (Class<?> clz : set) {
             System.out.println(clz.getSimpleName());
         }
 
@@ -124,6 +124,7 @@ public class MyClassLoader {
 
     /**
      * 获取指定路径下的所有限定性类名
+     *
      * @param basePath
      * @param basePackageName
      * @return

@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 类型转换工具类
  *
- * @author Frank
+ * @author frank
  * @since 1.0.0
  */
 public class CastUtil {
