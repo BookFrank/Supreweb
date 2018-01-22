@@ -22,6 +22,10 @@ public class Param {
         return CastUtil.cast2Long(paramMap.get(name));
     }
 
+    public String getParameter(String key){
+        return (String) paramMap.get(key);
+    }
+
     public Map<String,Object> getMap(){
         return paramMap;
     }

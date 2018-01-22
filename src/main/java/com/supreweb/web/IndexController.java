@@ -5,6 +5,7 @@ import com.tazine.supreweb.core.annotation.Controller;
 import com.tazine.supreweb.core.annotation.RequestMapping;
 import com.tazine.supreweb.core.annotation.RequestMethod;
 import com.tazine.supreweb.core.route.Data;
+import com.tazine.supreweb.core.route.Param;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -22,9 +23,9 @@ public class IndexController {
     public IndexService service;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public Data hello(String a) {
+    public Data hello(Param param) {
         System.out.println("Hello World");
-        return new Data("hello world");
+        return new Data(param.getParameter("a"));
     }
 
     @RequestMapping(value = "/code", method = RequestMethod.GET)
