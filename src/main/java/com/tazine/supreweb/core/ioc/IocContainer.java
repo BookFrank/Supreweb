@@ -23,6 +23,11 @@ public class IocContainer {
         }
     }
 
+    /**
+     * 依赖注入
+     * @param cls 待注入的class
+     * @param object
+     */
     private static void di(Class<?> cls, Object object) {
         Field[] fields = cls.getDeclaredFields();
         for (Field field : fields) {
