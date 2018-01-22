@@ -39,5 +39,22 @@ public class CastUtil {
     }
 
 
+    public static long cast2Long(Object o) {
+        return cast2Long(o,0L);
+    }
 
+    public static long cast2Long(Object obj, long defaultValue) {
+        long longValue = defaultValue;
+        if (null != obj) {
+            String str = cast2String(obj);
+            if (StringUtils.isNotEmpty(str)) {
+                try {
+                    longValue = Long.parseLong(str);
+                } catch (NumberFormatException e) {
+                    longValue = defaultValue;
+                }
+            }
+        }
+        return longValue;
+    }
 }

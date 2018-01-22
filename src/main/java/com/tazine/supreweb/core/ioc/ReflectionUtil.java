@@ -30,6 +30,7 @@ public class ReflectionUtil {
     public static Object invokeMethod(Object obj, Method method, Object... args) {
         Object result = null;
         try {
+            method.setAccessible(true);
             result = method.invoke(obj, args);
         } catch (Exception e) {
             LOGGER.error("method.invoke() error");
