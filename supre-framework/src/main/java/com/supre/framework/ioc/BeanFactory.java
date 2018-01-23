@@ -3,6 +3,7 @@ package com.supre.framework.ioc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.UncheckedIOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -33,13 +34,12 @@ public class BeanFactory {
         return BEAN_MAP;
     }
 
+    @SuppressWarnings("unchecked")
     public static <T> T getBean(Class<T> cls){
         if (!BEAN_MAP.containsKey(cls)){
+            logger.error("Cannot get this bean {}", cls.getSimpleName());
             throw new RuntimeException("can not get bean by this class: " + cls);
         }
         return (T) BEAN_MAP.get(cls);
     }
-
-
-
 }

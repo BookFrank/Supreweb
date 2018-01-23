@@ -25,7 +25,7 @@ public class MyClassLoader {
     /**
      * 获取类加载器
      *
-     * @return
+     * @return ClassLoader
      */
     public static ClassLoader getClassLoader() {
         return Thread.currentThread().getContextClassLoader();
@@ -34,17 +34,17 @@ public class MyClassLoader {
     /**
      * 加载类
      *
-     * @param className
-     * @param isInit
-     * @return
+     * @param className 类名
+     * @param isInit    是否立即初始化
+     * @return Class
      */
     public static Class<?> loadClass(String className, boolean isInit) {
         Class<?> clz = null;
         try {
             clz = Class.forName(className, isInit, getClassLoader());
         } catch (ClassNotFoundException e) {
-            logger.error("找不到该Class");
-            e.printStackTrace();
+            logger.error("找不到该Class, {}", className);
+            throw new RuntimeException(e);
         }
         return clz;
     }
@@ -52,8 +52,8 @@ public class MyClassLoader {
     /**
      * 获取指定包名下的所有类
      *
-     * @param packName
-     * @return
+     * @param packName 包名
+     * @return Set<Class>
      */
     public static Set<Class<?>> getClassesSet(String packName) {
         Set<Class<?>> classSet = new HashSet<Class<?>>();
@@ -106,8 +106,8 @@ public class MyClassLoader {
     /**
      * 递归获取文件夹下所有文件
      *
-     * @param path
-     * @return
+     * @param path 文件夹名
+     * @return List<File>
      */
     private static List<File> getAllFiles(String path) {
         List<File> fileList = new ArrayList<File>();
@@ -142,5 +142,4 @@ public class MyClassLoader {
         }
         return fileList;
     }
-
 }
