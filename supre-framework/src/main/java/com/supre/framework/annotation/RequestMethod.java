@@ -1,4 +1,4 @@
-package com.tazine.supreweb.core.annotation;
+package com.supre.framework.annotation;
 
 /**
  * HTTP RequestMethod
