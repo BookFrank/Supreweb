@@ -11,13 +11,14 @@ import java.util.Set;
 
 /**
  * Framework Router
+ * 根据控制器方法注解生成 RouterMap，供调用
  *
  * @author frank
  * @since 1.0.0
  */
 public class Router {
 
-    private static final Map<Request, RequestHandler> routerMap = new HashMap<Request, RequestHandler>();
+    private static final Map<Request, RequestHandler> ROUTER_MAP = new HashMap<Request, RequestHandler>();
 
     static {
         Set<Class<?>> controllers = ClassContainer.getControllerClasses();
@@ -26,19 +27,20 @@ public class Router {
             Method[] methods = cls.getDeclaredMethods();
             for (Method m : methods) {
                 if (m.isAnnotationPresent(RequestMapping.class)) {
+                    System.out.println(m.getName() + " 被加入 RouterMap");
                     RequestMapping requestMapping = m.getAnnotation(RequestMapping.class);
                     RequestMethod requestMethod = requestMapping.method();
                     String path = requestMapping.value();
 
                     Request request = new Request(requestMethod, path);
                     RequestHandler requestHandler = new RequestHandler(cls, m);
-                    routerMap.put(request, requestHandler);
+                    ROUTER_MAP.put(request, requestHandler);
                 }
             }
         }
     }
 
     public static RequestHandler getHandler(Request request) {
-        return routerMap.get(request);
+        return ROUTER_MAP.get(request);
     }
 }
