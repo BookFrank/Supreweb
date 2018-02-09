@@ -29,6 +29,4 @@ public class Param {
     public Map<String,Object> getMap(){
         return paramMap;
     }
-
-
 }

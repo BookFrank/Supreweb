@@ -27,7 +27,7 @@ public class Router {
             Method[] methods = cls.getDeclaredMethods();
             for (Method m : methods) {
                 if (m.isAnnotationPresent(RequestMapping.class)) {
-                    System.out.println(m.getName() + " 被加入 RouterMap");
+                    System.out.println(m.getName() + " add in RouterMap");
                     RequestMapping requestMapping = m.getAnnotation(RequestMapping.class);
                     RequestMethod requestMethod = requestMapping.method();
                     String path = requestMapping.value();
