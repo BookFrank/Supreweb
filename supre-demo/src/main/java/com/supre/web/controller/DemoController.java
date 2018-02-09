@@ -5,6 +5,7 @@ import com.supre.framework.annotation.Controller;
 import com.supre.framework.annotation.RequestMapping;
 import com.supre.framework.annotation.RequestMethod;
 import com.supre.framework.response.Data;
+import com.supre.framework.route.Param;
 import com.supre.web.service.DemoService;
 
 /**
@@ -20,7 +21,7 @@ public class DemoController {
     private DemoService demoService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public Data hello() {
+    public Data hello(Param param) {
         String res = demoService.sayHello();
         System.out.println("Hello World");
         return new Data(res);
