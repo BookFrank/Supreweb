@@ -15,9 +15,9 @@ import java.util.Properties;
  */
 public class Environment {
 
-    private static final Properties properties = new Properties();
-
     private static final Logger logger = LoggerFactory.getLogger(Environment.class);
+
+    private static final Properties properties = new Properties();
 
     static {
         InputStream is = null;
@@ -33,7 +33,7 @@ public class Environment {
                     is.close();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    logger.error("Error when close Inputstream", e);
+                    logger.error("Error when close InputStream", e);
                 }
             }
         }
@@ -46,5 +46,4 @@ public class Environment {
     public static String getProperty(String key){
         return properties.getProperty(key, "");
     }
-
 }
