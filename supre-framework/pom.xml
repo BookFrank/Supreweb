@@ -9,9 +9,11 @@
 
     <groupId>com.tazine.supreweb</groupId>
     <artifactId>supre-framework</artifactId>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>supre-framework</name>
+    <description>Supre Web 框架</description>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -73,19 +75,18 @@
             <version>1.7.25</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <!-- 三方工具库 Start -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.7</version>
+            <version>1.2.53</version>
         </dependency>
+        <!-- 三方工具库 End -->
 
         <dependency>
             <groupId>junit</groupId>

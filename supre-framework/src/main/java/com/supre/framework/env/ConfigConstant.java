@@ -19,6 +19,4 @@ public interface ConfigConstant {
     String APP_BASE_PACKAGE = "app.base.package";
     String APP_JSP_PATH = "jsp_path";
     String APP_ASSET_PATH = "asset_path";
-
-
 }
