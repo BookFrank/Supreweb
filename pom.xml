@@ -5,6 +5,9 @@
     <artifactId>supreweb</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>supre-web-starter</module>
+    </modules>
 
     <name>Supreweb</name>
     <url>http://maven.apache.org</url>
