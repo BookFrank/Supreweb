@@ -24,7 +24,6 @@ public class SupremeBootstrap {
     }
 
     public static void main(String[] args) {
-
         start();
     }
 }
