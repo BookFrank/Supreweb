@@ -8,7 +8,7 @@ import com.supre.framework.route.Router;
  * 框架启动类
  *
  * @author frank
- * @since 1.0.0
+ * @date 2018/01/23
  */
 public class SupremeBootstrap {
 
@@ -24,7 +24,6 @@ public class SupremeBootstrap {
     }
 
     public static void main(String[] args) {
-
         start();
     }
 }
