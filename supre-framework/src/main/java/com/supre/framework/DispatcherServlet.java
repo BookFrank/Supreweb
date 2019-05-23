@@ -7,7 +7,10 @@ import com.supre.framework.ioc.BeanFactory;
 import com.supre.framework.ioc.ReflectionUtil;
 import com.supre.framework.response.Data;
 import com.supre.framework.response.View;
-import com.supre.framework.route.*;
+import com.supre.framework.route.Param;
+import com.supre.framework.route.Request;
+import com.supre.framework.route.RequestHandler;
+import com.supre.framework.route.Router;
 import com.supre.framework.util.CodecUtil;
 import com.supre.framework.util.StreamUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -84,7 +87,7 @@ public class DispatcherServlet extends HttpServlet {
             if (result instanceof View) {
                 System.out.println("View 类型");
                 // 返回 JSP 页面
-                View view = (View) result;
+                View view = (View)result;
                 String path = view.getPath();
                 if (StringUtils.isNotEmpty(path)) {
                     if (path.startsWith("/")) {
@@ -99,7 +102,7 @@ public class DispatcherServlet extends HttpServlet {
                 }
             } else if (result instanceof Data) {
                 // 返回 JSON 数据
-                Data data = (Data) result;
+                Data data = (Data)result;
                 Object model = data.getModel();
                 if (null != model) {
                     resp.setContentType("application/json");
